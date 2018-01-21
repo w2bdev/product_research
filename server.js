@@ -1,22 +1,15 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import mongoose from 'mongoose';
 import morgan from 'morgan';
 
+import mongoDB from './Database/MongoDB'
 import gameRoute from './Route/Game';
 import userRoute from './Route/User';
-
-import mongoDbConfig from './Configs/MongoDB/Config';
-
 
 const app = express(); 
 
 const port = process.env.PORT || 8080;
 
-mongoose.Promise = global.Promise;
-mongoose.connect(mongoDbConfig.DbConnectionString, mongoDbConfig.options);
-const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
 
 // Body parser and Morgan middleware
 app.use(bodyParser.urlencoded({ extended: true }));
