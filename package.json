@@ -16,7 +16,10 @@
     "jsonwebtoken": "^7.4.1",
     "moment": "^2.18.1",
     "mongoose": "^4.10.4",
-    "morgan": "^1.8.2"
+    "morgan": "^1.8.2",
+    "mysql": "^2.15.0",
+    "mysql2": "^1.5.1",
+    "sequelize": "^4.31.2"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",

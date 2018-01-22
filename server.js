@@ -2,13 +2,24 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import morgan from 'morgan';
 
-import mongoDB from './Database/MongoDB'
+//import mongoDB from './Database/MongoDB'
 import gameRoute from './Route/Game';
 import userRoute from './Route/User';
+
+import User2 from './Models/User2';
+
+
+require('./Database/MongoDB');
+//require('./Database/MySQL');
+//require('./Database/Sequelize');
 
 const app = express(); 
 
 const port = process.env.PORT || 8080;
+
+User2.findOne().then(user => {
+    console.log(user.get('firstName'));
+  });
 
 
 // Body parser and Morgan middleware
