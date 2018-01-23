@@ -7,11 +7,16 @@
     "app": "babel-node Application/App.js",
     "gameApi": "babel-node Application/Game.js",
     "userApi": "babel-node Application/User.js",
-    "adminSeed": "babel-node Persistence/Seed/Admin.js"
+    "adminSeed": "babel-node Persistence/Seed/Admin.js",
+    "user-test": "mocha --compilers js:babel-core/register babel-node Service/Testing/User.js",
+    "game-test": "mocha --compilers js:babel-core/register babel-node Service/Testing/Game.js",
+    "todo-test": "mocha --compilers js:babel-core/register Service/Testing/todo.js"
   },
   "author": "Wb",
   "license": "ISC",
   "dependencies": {
+    "assert": "^1.4.1",
+    "awilix": "^3.0.3",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
@@ -26,6 +31,7 @@
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-core": "^6.24.1",
-    "babel-preset-es2015": "^6.24.1"
+    "babel-preset-es2015": "^6.24.1",
+    "mocha": "^5.0.0"
   }
 }
