@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "api": "babel-node server.js",
-    "gameApi": "babel-node game.js"
+    "app": "babel-node Application/App.js",
+    "gameApi": "babel-node Application/Game.js",
+    "userApi": "babel-node Application/User.js",
+    "adminSeed": "babel-node Persistence/Seed/Admin.js"
   },
   "author": "Wb",
   "license": "ISC",

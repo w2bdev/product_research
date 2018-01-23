@@ -11,5 +11,4 @@ const sequelize = new Sequelize('product','root','',{
     },
 })
 
-
 export default sequelize;

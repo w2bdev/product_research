@@ -1,4 +1,5 @@
-import Game from '../Models/Game';
+import Game from '../../Persistence/Model/Game';
+// to be change :  talk to server instead
 
 const getGames = (req, res) => {
     Game.find(null, null, { sort: { postDate: 1 } }, (err, games) => {
@@ -7,7 +8,6 @@ const getGames = (req, res) => {
         res.json(games);
     });
 }
-
 
 const getGame = (req, res) => {
     const { id } = req.params;
@@ -27,7 +27,6 @@ const postGame = (req, res) => {
     });
 };
 
-
 const deleteGame = (req, res) => {
     Game.remove({ _id: req.params.id },
         err => {
@@ -37,6 +36,5 @@ const deleteGame = (req, res) => {
         }
     );
 };
-
 
 export { getGames, getGame, postGame, deleteGame };

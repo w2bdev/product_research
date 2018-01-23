@@ -1,6 +1,6 @@
 import express from 'express';
 
-import { signup, login, verifyAuth } from '../Services/User';
+import { signup, login, verifyAuth } from '../Controller/User';
 
 const app = express();
 const router = express.Router();

@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken';
 import moment from 'moment';
-import User from '../Models/User'
-import config from '../Configs/user';
+import User from '../../Persistence/Model/User'
+import config from '../Config/User';
 
 // Utility function to create and return the token, it requires TOKEN_SECRET from config
 const createToken = name => {

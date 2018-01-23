@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-import mongoDbConfig from '../Configs/MongoDB/Config';
+import mongoDbConfig from '../Config/MongoDB';
 
 mongoose.Promise = global.Promise;
 mongoose.connect(mongoDbConfig.DbConnectionString, mongoDbConfig.options);
