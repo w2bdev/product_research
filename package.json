@@ -10,15 +10,20 @@
     "adminSeed": "babel-node Persistence/Seed/Admin.js",
     "user-test": "mocha --compilers js:babel-core/register babel-node Service/Testing/User.js",
     "game-test": "mocha --compilers js:babel-core/register babel-node Service/Testing/Game.js",
-    "todo-test": "mocha --compilers js:babel-core/register Service/Testing/todo.js"
+    "todo-test": "mocha --compilers js:babel-core/register Service/Testing/todo.js",
+
+    "todo-experiment": "babel-node  Experiment/todo/server.js",
+    "todo-experiment-test": "mocha --compilers js:babel-core/register Experiment/todo/todo.js"
   },
   "author": "Wb",
   "license": "ISC",
   "dependencies": {
     "assert": "^1.4.1",
     "awilix": "^3.0.3",
+    "awilix-express": "^0.11.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.17.2",
+    "chai": "^4.1.2",
     "express": "^4.15.3",
     "jsonwebtoken": "^7.4.1",
     "moment": "^2.18.1",

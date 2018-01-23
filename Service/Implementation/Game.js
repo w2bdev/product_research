@@ -1,6 +1,5 @@
-import awilix from 'awilix';
+import Game from '../../Repository/Model/Game';
 
-import Game from '../../Persistence/Model/Game';
 
 export default{
     
