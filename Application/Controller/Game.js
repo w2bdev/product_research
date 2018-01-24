@@ -1,7 +1,4 @@
-import GameRepository from '../../Repository/Model/Game';
 import GameService from '../../Service/Implementation/Game';
-
-// to be change :  talk to server instead
 
 const getGames = async (req, res) => {
     try {
