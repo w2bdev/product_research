@@ -5,14 +5,15 @@
   "main": "index.js",
   "scripts": {
     "app": "babel-node Application/App.js",
-    "gameApi": "babel-node Application/Game.js",
-    "userApi": "babel-node Application/User.js",
-    "adminSeed": "babel-node Persistence/Seed/Admin.js",
+    "game-api": "babel-node Application/Game.js",
+    "user-api": "babel-node Application/User.js",
+    "admin-seed": "babel-node Repository/Seed/Admin.js",
     "user-test": "mocha --compilers js:babel-core/register babel-node Service/Testing/User.js",
     "game-test": "mocha --compilers js:babel-core/register babel-node Service/Testing/Game.js",
+    "game-exe": " babel-node Service/Game.js",
     "todo-test": "mocha --compilers js:babel-core/register Service/Testing/todo.js",
 
-    "todo-experiment": "babel-node  Experiment/todo/server.js",
+    "todo-experiment": "babel-node Experiment/todo/server.js",
     "todo-experiment-test": "mocha --compilers js:babel-core/register Experiment/todo/todo.js"
   },
   "author": "Wb",

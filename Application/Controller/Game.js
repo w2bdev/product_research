@@ -1,40 +1,42 @@
-import Game from '../../Persistence/Model/Game';
+import GameRepository from '../../Repository/Model/Game';
+import GameService from '../../Service/Implementation/Game';
+
 // to be change :  talk to server instead
 
-const getGames = (req, res) => {
-    Game.find(null, null, { sort: { postDate: 1 } }, (err, games) => {
-        if (err)
-            res.send(err);
+const getGames = async (req, res) => {
+    try {
+        const games = await GameService.getGames();
         res.json(games);
-    });
+    } catch (error) {
+        return res.status(500).json({ message: error.message });
+    }
 }
 
-const getGame = (req, res) => {
-    const { id } = req.params;
-    Game.findById(id, (err, game) => {
-        if (err)
-            res.send(err);
-        res.json(game);
-    });
+const getGame = async (req, res) => {
+    try {
+        const games = await GameService.getGameByID(req.params.id);
+        res.json(games);
+    } catch (error) {
+        return res.status(500).json({ message: error.message });
+    }
 }
 
-const postGame = (req, res) => {
-    let game = Object.assign(new Game(), req.body);
-    game.save(err => {
-        if (err)
-            res.send(err);
-        res.json({ message: 'game created' });
-    });
+const addGame = async (req, res) => {
+    try {
+        await GameService.addGame(req.body);
+        res.json({status: 'success', message: 'game created successfully' });
+    } catch (error) {
+        return res.status(500).json({ message: error.message });
+    }
 };
 
-const deleteGame = (req, res) => {
-    Game.remove({ _id: req.params.id },
-        err => {
-            if (err)
-                res.send(err);
-            res.json({ message: 'successfully deleted' });
-        }
-    );
+const deleteGame = async (req, res) => {
+    try {
+        await GameService.deleteGameByID(req.params.id);
+        res.json({status: 'success', message: 'game deleted successfully' });
+    } catch (error) {
+        return res.status(500).json({ message: error.message });
+    }
 };
 
-export { getGames, getGame, postGame, deleteGame };
+export { getGames, getGame, addGame, deleteGame };

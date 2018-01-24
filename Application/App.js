@@ -1,4 +1,4 @@
-import Admin from '../Persistence/Model/Admin';
+import Admin from '../Repository/Model/Admin';
 
 
 Admin.findOne().then(user => {
